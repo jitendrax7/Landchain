@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/userRoutes.js";
 import landRoutes from "./routes/landRoutes.js";
+import transferRoutes from "./routes/transfer.js";
 
 const app = express();
 app.use(cors());
@@ -12,6 +13,8 @@ app.route("/").get((req, res) => {
 }
 );
 
+
+app.use("/api/transfer", transferRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/lands", landRoutes);
 

@@ -17,25 +17,27 @@ const landSchema = new mongoose.Schema({
   approvedBy: { type: String },   
   approvalDate: { type: Date },
 
+
   location: { type: String, required: true },
   geoLocation: {
     lat: Number,
     lng: Number
   },
 
+
   documents: [
     {
       name: String,
-      url: String,
+      url: String, 
       uploadedAt: Date
-    }
+    } 
   ],
 
-  // Blockchain details
-  blockchainTxHash: { type: String },   // Tx from smart contract listings
-  boundaryMapURL: { type: String },     // Geo-tag map image
 
-  // Ownership transfers
+  blockchainTxHash: { type: String },   
+  boundaryMapURL: { type: String },     
+
+
   previousOwners: [
     {
       name: String,
@@ -44,11 +46,12 @@ const landSchema = new mongoose.Schema({
     }
   ],
 
-  // Who added it
-  addedBy: { type: String, required: true }, // wallet address of the lister
+  
+  addedBy: { type: String, required: true }, 
 
   extraNotes: { type: String }
 
 }, { timestamps: true });
 
 export default mongoose.model("Land", landSchema);
+ 
