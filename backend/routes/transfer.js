@@ -30,7 +30,7 @@ router.post("/store", async (req, res) => {
 
     if (typeof landId !== "number" || landId <= 0) {
       return res.status(400).json({ message: "Invalid landId" });
-    }
+    } 
 
     if (!seller.startsWith("0x") || !buyer.startsWith("0x")) {
       return res.status(400).json({ message: "Invalid wallet address format" });
